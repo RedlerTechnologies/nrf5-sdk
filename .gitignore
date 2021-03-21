@@ -1,0 +1,12 @@
+# Examples
+examples/
+nRF_MDK*.msi
+
+# Segger Embedded Studio
+*.emSession
+
+# Segger JLink
+*.jlink
+
+# OS X
+.DS_Store
