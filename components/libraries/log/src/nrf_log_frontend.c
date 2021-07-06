@@ -439,6 +439,16 @@ static inline void std_header_set(uint32_t severity_mid,
 }
 
 /**
+ * @brief Log pending hook as suggested by
+ * https://devzone.nordicsemi.com/f/nordic-q-a/76680/freertos-power-consumption-and-idle-hook
+ *
+ */
+__WEAK void log_pending_hook( void )
+{
+    // Nothing to do
+}
+
+/**
  * @brief Allocates chunk in a buffer for one entry and injects overflow if
  * there is no room for requested entry.
  *
@@ -499,6 +509,7 @@ static inline bool buf_prealloc(uint32_t content_len, uint32_t * p_wr_idx, bool 
     }
 
     CRITICAL_REGION_EXIT();
+    log_pending_hook();
     return ret;
 }
 
