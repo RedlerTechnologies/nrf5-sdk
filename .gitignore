@@ -1,6 +1,7 @@
 # Examples
-examples/
-nRF_MDK*.msi
+examples/*
+
+*.msi
 
 # Segger Embedded Studio
 *.emSession
@@ -10,3 +11,4 @@ nRF_MDK*.msi
 
 # OS X
 .DS_Store
+external/micro-ecc/**/_build/*
