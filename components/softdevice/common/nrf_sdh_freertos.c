@@ -97,7 +97,7 @@ void nrf_sdh_freertos_init(nrf_sdh_freertos_task_hook_t hook_fn, void * p_contex
 
     BaseType_t xReturned = xTaskCreate(softdevice_task,
                                        "BLE",
-                                       NRF_BLE_FREERTOS_SDH_TASK_STACK,
+                                       2*NRF_BLE_FREERTOS_SDH_TASK_STACK,
                                        p_context,
                                        2,
                                        &m_softdevice_task);
