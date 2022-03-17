@@ -466,8 +466,9 @@ nrfx_err_t nrfx_uart_rx(nrfx_uart_t const * p_instance,
     }
     else
     {
-        nrf_uart_int_enable(p_instance->p_reg, NRF_UART_INT_MASK_RXDRDY |
-                                               NRF_UART_INT_MASK_ERROR);
+        // FIXME ignore error status from UART for now.
+        nrf_uart_int_enable(p_instance->p_reg, NRF_UART_INT_MASK_RXDRDY /* |
+                                               NRF_UART_INT_MASK_ERROR */);
     }
     err_code = NRFX_SUCCESS;
     NRFX_LOG_INFO("Function: %s, error code: %s.", __func__, NRFX_LOG_ERROR_STRING_GET(err_code));
